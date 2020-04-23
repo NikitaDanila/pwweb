@@ -10,7 +10,6 @@
 	$request= "SELECT user_uid, user_pwd FROM users WHERE user_uid = '$uid' AND user_pwd = '$pwd'";
 	$result = mysql_query($request);
 	$row = mysql_fetch_array($result);
-	$output = $row["user_uid"];
 	
 	if($row["user_uid"] != $uid){
 		header("Location: ../loginindex.php");
