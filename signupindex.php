@@ -3,6 +3,10 @@
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box}
+body{
+  width: 50%;
+  margin: auto;
+}
 
 /* Full-width input fields */
 input[type=text], input[type=password] {

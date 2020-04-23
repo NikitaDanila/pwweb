@@ -11,6 +11,6 @@
 	$result = mysql_query($request);
 	$row = mysql_fetch_array($result);
 
-	$output =  __GET[$row["user_uid"]];
+	echo $row["user_uid"];
 	?>
 

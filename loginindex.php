@@ -53,7 +53,10 @@ span.psw {
   float: right;
   padding-top: 16px;
 }
-
+body{
+  width: 50%;
+  margin: auto;
+}
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
   span.psw {
@@ -69,14 +72,14 @@ span.psw {
 <body>
 
 <h2>Login Form</h2>
-
+<div class="container">
 <form action="includes/login.inc.php" method="POST">
   <div class="imgcontainer">
     <img src="images/avatar.png" alt="Avatar" class="avatar" height="400" 
      width="231">
   </div>
 
-  <div class="container">
+  
     <label for="uname"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="uid" required>
 
@@ -84,10 +87,11 @@ span.psw {
     <input type="password" placeholder="Enter Password" name="pwd" required>
         
     <button type="submit" name="submit">Login</button>
-  </div>
+  
 </form>
 <form action="signupindex.php">
     <button action="submit" class="signupbtn">Sign Up</button>
 </form>
+  </div>
 </body>
 </html>
