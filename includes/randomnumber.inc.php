@@ -1,5 +1,5 @@
 <?php 
 		session_start();
-		$_SESSION['randomNumber'] = rand(0,5);
+		$_SESSION['randomNumber'] = 10 ;//rand(0,10);
 
 		header("Location: ../index.php?random=success");

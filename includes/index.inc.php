@@ -6,12 +6,25 @@
 		$myNumber = $_POST['input_number'];
 		//echo $myNumber;
 		$numberOfTries;
+		$range = ($randomNumber * 40)/100;
 
 			if($myNumber == $randomNumber){
-				echo "is the same number";
-			}else{
-				echo "try one more time";
-				header('Refresh: 5; url=http://127.0.0.1/edsa-pwweb-pc/index.php');
-			}
-		
+
+				//echo "YOU WIN!!";
+				$_SESSION["gut"] = 'won';
+				//header('Refresh: 1; url=http://127.0.0.1/edsa-pwweb-pc/index.php');
+				header("Location: ../index.php");
+
+			}else if($myNumber <= ($randomNumber + $range) && $myNumber >= ($randomNumber - $range)) {
+					$_SESSION["gut"] = "hot";
+					header("Location: ../index.php");
+				}else{
+					$_SESSION["gut"] = "cold";
+					header("Location: ../index.php");
+
+				}
+				//echo "try one more time";
+				
+				
+				//header('Refresh: 3; url=http://127.0.0.1/edsa-pwweb-pc/index.php');
 
