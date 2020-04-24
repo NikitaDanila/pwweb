@@ -1,6 +1,7 @@
 <?php 
 session_start();
 $gut = $_SESSION["gut"];
+echo $_SESSION['randomNumber'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,6 +15,8 @@ form {border: 3px solid #f1f1f1;}
 	  display: inline-block;
 	  border: 1px solid #ccc;
 	  box-sizing: border-box;
+	  left: 50%;
+
 	}
 	button{
 		width: 300px;
@@ -23,21 +26,45 @@ form {border: 3px solid #f1f1f1;}
 	    border: 1px solid #ccc;
 	    /*box-sizing: border-box;*/
 	}
-
-	.container {
-  		padding: 16px;
+	.rules{
+		align-self: right;
 	}
-
+	/*.container {
+  		padding: 16px;
+	}*/
+	.image{
+		width: 300px;
+		height: 300px;
+	}
 	.generatebtn{
-		/*width: auto;*/
-		padding: 10px 18px;
-		background-color: #f44336;
+		width: 300px;
+		margin: auto;
+	}
+	.trybtn{
+		width: 300px;
+		margin: auto;
 	}
 	.displaybox{
 		/*background-color: orange;*/
+
+		width: 500px;
+		height: 350px;
+		border: 1px solid black;
+		margin: auto;
+		/*align-content: center;*/
+		text-align: center;
+	}
+	.rules{
+		position: absolute;
 		width: 300px;
 		height: 350px;
 		border: 1px solid black;
+		margin: auto;
+		left: 80%;
+	}
+	div.textbox{
+		/*position: absolute;*/
+		width: 300px;
 		margin: auto;
 	}
 	div.textfire{
@@ -64,7 +91,7 @@ form {border: 3px solid #f1f1f1;}
 </head>
 <body>
 	<div class="container">
-		<form action="includes/randomnumber.inc.php" method="GET">
+		<form action="includes/randomnumber.inc.php" method="POST">
 			<div class="generatebtn">
 				<button type="submit" name="sumbit_random">
 					Generate Random Number
@@ -77,28 +104,41 @@ form {border: 3px solid #f1f1f1;}
 			<div class="textbox">
 			<input type="text" name="input_number" placeholder="Enter a number" required>
 			</div>
-
+			<div class="rules">
+				<ul  style=list-style-type:none;>
+						How to play:
+							<li>1. Press "Generate Random Number"</li>
+							<li>2. Enter a number</li>
+							<li>3. Press "Try your luck"</li>
+							<li>4. Have fun!!</li>
+				</ul>'
+			</div>
 			<div class="displaybox">
 				<?php
 					if($gut == "hot"){
-						echo '<img src="images/fire.png" alt="Fire" class="image" height="300" width="300">
+						echo '<img src="images/fire.png" alt="Fire" class="image">
 						<div class="textfire">HOT!!</div>';
 					}else if($gut == "cold"){
-						echo '<img src="images/ice.png" alt="Fire" class="image" height="300" width="300">
+						echo '<img src="images/ice.png" alt="cold" class="image">
 						<div class="textice">COLD!!</div>';
 					}else if($gut == "won"){
-						echo '<img src="images/trophy.png" alt="Fire" class="image" height="300" width="300">
+						echo '<img src="images/trophy.png" alt="won" class="image">
 						<div class="texttrophy">YOU WON!!</div>';
 					}
 				?>
-			</div>
 
+			</div>
+			
 			<div class="trybtn">
 				<button type="submit" name="submit">Try your luck!</button>
 			</div>
 
 			
 		</form>
+
+		<!-- <form action="includes/randomnumber.inc.php" method="POST">
+		<button type="submit" name="clear">Clear</button>
+		</form> -->
 	</div>
 	
 </body>

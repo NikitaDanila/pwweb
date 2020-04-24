@@ -12,11 +12,11 @@
 	$result = mysql_query($request);
 	$row = mysql_fetch_array($result);
 
-	$_SESSION["user"] = $row["user_uid"];
+	$_SESSION["uid"] = $row["user_uid"];
 	
 	if($row["user_uid"] != $uid){
-		header("Location: ../loginindex.php");
+		header("Location: ../newgame.php");
 	} 
 	else{
-		header("Location: ../index.php?login=success");
+		header("Location: ../newgame.php?login=success");
 	}
