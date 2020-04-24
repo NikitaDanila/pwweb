@@ -1,4 +1,5 @@
-<?php session_start();
+<?php 
+session_start();
 $gut = $_SESSION["gut"];
 ?>
 <!DOCTYPE html>
