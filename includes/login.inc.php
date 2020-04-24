@@ -1,4 +1,5 @@
 <?php
+include_once 'randomnumber.inc.php';
 	session_start();
 	error_reporting(E_ALL ^ E_DEPRECATED);
 
@@ -13,6 +14,8 @@
 	$row = mysql_fetch_array($result);
 
 	$_SESSION["uid"] = $row["user_uid"];
+	$randomNumber = $_SESSION['randomNumber'];
+	$_SESSION["gut"] = "";
 	
 	if($row["user_uid"] != $uid){
 		header("Location: ../newgame.php");

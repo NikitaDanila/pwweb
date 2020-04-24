@@ -58,9 +58,9 @@ form {border: 3px solid #f1f1f1;}
 		position: absolute;
 		width: 300px;
 		height: 350px;
-		border: 1px solid black;
+		/*border: 1px solid black;*/
 		margin: auto;
-		left: 80%;
+		left: 20%;
 	}
 	div.textbox{
 		/*position: absolute;*/
